@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .gallery img {
+          width: 30%;
+          height: 30%;
+          object-fit: cover;
+          align-content: center;
+          object-position: center;
+          transition: transform ease-in-out 0.5s;
+        }
+        body {
+          background-color: rgb(69, 219, 245);
+        }
+        .zoom {
+          z-index: 1;
+          transform: scale(1.5);
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        
+        #fullpage {
+          display: none;
+          position: absolute;
+          z-index: 9999;
+          top: 0;
+          left: 10%;
+          width: 80vw;
+          height: 80vh;
+        
+        
+          background-size: contain;
+          background-repeat: no-repeat no-repeat;
+          background-position: center center;
+          background-color: black;
+          
+          margin-left: auto;
+          margin-right: auto;
+        }
+            </style>
+
+<h1 style="background-color:DodgerBlue;">My Weblog</h1>
+<body onload="getPics()">
+    <div class="container">
+      <div class="gallery">
+        <img src="img/catty.png" />
+      </div>
+    </div>
+    <div id="fullpage" onclick="this.style.display='none';"></div>
+
+    <div>
+        <div class="hobby"></div>
+        <h1 style="background-color:rgb(30, 255, 124);"  <p>My Hobbies:</p>
+        <ul>
+           
+          <li>Eating Fish</li>
+          <li>Sleeping</li>
+          <li>Self-Grooming</li>
+        </ul>
+        <h1 style="background-color:rgb(191, 30, 255);" <p>About the cat:</p>
+        <ol>
+          <li> My cat is flappy and friendly toward others Being energetic, alert, curious, inquisitive, imaginative, and brilliant are all attributes of extraversion.</li>
+          
+        </ol>
+      </div>
+
+<!--javascript to-->
+    <script>
+        function getPics() {} //just for this demo
+const imgs = document.querySelectorAll('.gallery img');
+const fullPage = document.querySelector('#fullpage');
+
+imgs.forEach(img => {
+  img.addEventListener('click', function() {
+    fullPage.style.backgroundImage = 'url(' + img.src + ')';
+    fullPage.style.display = 'block';
+  });
+});
+    </script>
+<!--hanggang dito ang javascript-->
+</body>
+
+</html>
